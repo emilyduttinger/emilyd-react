@@ -41,7 +41,7 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
             </p>
             {
               urlArray && urlArray.length > 0 ? (
-                <ul className="url-list">
+                <ul className={styles.urlList}>
                   {
                     urlArray.map((url, index) => {
                       return (
