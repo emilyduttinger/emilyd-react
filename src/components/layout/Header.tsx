@@ -1,13 +1,11 @@
-interface HeaderProps {
-  title: string;
-  description: string;
-}
+import './Header.css';
+import Navigation from "@/components/patterns/Navigation/Navigation";
 
-export default function Header({ title, description }: HeaderProps) {
+export default function Header() {
   return (
-    <header className="flex flex-col justify-center items-center gap-(1.5rem) text-center .sm:flex-row .sm:justify-between .sm:text-left ">
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <header className="header flex flex-col justify-center items-center text-center sm:flex-row sm:justify-between sm:text-left">
+      <span className="heading-3 m-0">Emily Duttinger</span>
+      <Navigation />
     </header>
   );
 }

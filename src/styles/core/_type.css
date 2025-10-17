@@ -1,0 +1,130 @@
+h1, .heading-1, h2, .heading-2, h3, .heading-3, h4, .heading-4, h5, .heading-5, h6, .heading-6 {
+  font-family: var(--font-family-headings);
+  margin-bottom: var(--heading-margin);
+  margin-top: 0;
+  font-weight: 500;
+}
+
+h1, .heading-1 {
+  font-size: 2rem;
+
+  @media (min-width: 1024px) {
+    font-size: 3.5rem;
+  }
+}
+
+h2, .heading-2 {
+  font-size: 2rem;
+
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
+}
+
+h3, .heading-3 {
+  font-size: 1.5rem;
+
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
+}
+
+h4, .heading-4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+}
+
+h5, .heading-5 {
+  font-size: 1.125rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.25rem;
+  }
+}
+
+h6, .heading-6 {
+  font-size: 1rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.125rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7em;
+  margin: 0;
+
+  &.small {
+    font-size: 0.875rem;
+  }
+
+  &.large {
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.125rem;
+
+    &.large {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+a:not(.btn):not(.unstyled-link) {
+  font-size: 1rem;
+  line-height: 1.7em;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding-bottom: 2px;
+  position: relative;
+  background-image: linear-gradient(#fff 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 100% 2px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+
+  &:hover {
+    animation: underline-hover 0.5s cubic-bezier(0.58, 0.3, 0.005, 1) 0s 1 normal none running;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.125rem;
+  }
+}
+
+.logo-heading {
+  font-family: var(--font-family-body);
+  margin: 0;
+}
+
+.unstyled-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes underline-hover {
+  0% {
+    background-size: 100% 2px;
+    background-position: 100% 100%;
+  }
+
+  50% {
+      background-size: 0 2px;
+      background-position: 100% 100%;
+  }
+  50.01% {
+      background-size: 0 2px;
+      background-position: 0% 100%;
+  }
+  100% {
+      background-size: 100% 2px;
+      background-position: 0% 100%;
+  }
+}
