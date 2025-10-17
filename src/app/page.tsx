@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Container from "@/components/utility/Container/Container";
+import Container from "@/components/Container/Container";
 
 export default function Home() {
   const toolKitArray = ['JavaScript', 'TypeScript', 'Vue.js', 'Nuxt.js', 'React', 'HTML5 + CSS3', 'Sass + Less', 'Liquid', 'PHP', 'GraphQL', 'REST API', 'Git', 'Shopify Plus', 'Storybook', 'Design Systems', 'Accessibility', 'WCAG', 'Animation', 'UX/UI Design', 'Figma', 'Adobe Creative Suite', 'Cursor', 'Copilot'];

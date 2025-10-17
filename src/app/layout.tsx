@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
-import Header from "@/components/layout/Header";
+import Header from "@/components/Header/Header";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
