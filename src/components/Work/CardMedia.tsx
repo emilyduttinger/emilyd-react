@@ -8,7 +8,7 @@ export interface CardMediaProps {
 
 export default function CardMedia({ videoUrl, imageSrc, imageAlt = "" }: CardMediaProps) {
   return (
-    <div className="card-media">
+    <div className="rounded-sm overflow-hidden">
       {
         videoUrl ? <video src={videoUrl} poster={imageSrc} preload="none" autoPlay muted loop playsInline></video>
         : <Image src={imageSrc} alt={imageAlt} width={1600} height={900} />

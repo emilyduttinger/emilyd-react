@@ -1,4 +1,5 @@
 import CardMedia from "./CardMedia";
+import styles from "./WorkCard.module.css"
 
 export interface WorkCardProps {
   title: string;
@@ -14,7 +15,7 @@ export interface WorkCardProps {
 
 export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags }: WorkCardProps) {
   return (
-    <div className="work-card">
+    <div className={styles.workCard}>
       <a
         className="card-image-link unstyled-link relative text-primary"
         href={urlArray && urlArray.length > 0 ? urlArray[0] : url}
@@ -29,6 +30,43 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
           }
         </ul>
       </a>
+      <div className="card-content">
+        <h3 className="m-0">{title}</h3>
+        <div className="card-table border-t border-[var(--border-primary)] mt-[1.5rem]">
+          <div className={styles.row}>
+            <p className="heading-6 m-0">
+              {
+                urlArray && urlArray.length > 0 ? "URLs" : "URL"
+              }
+            </p>
+            {
+              urlArray && urlArray.length > 0 ? (
+                <ul className="url-list">
+                  {
+                    urlArray.map((url, index) => {
+                      return (
+                        <li key={index}>
+                          <a href={url} target="_blank">{url.replace('https://',"")}</a>
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              ) : url ? (
+                <p><a href={url} target="_blank">{url.replace('https://',"")}</a></p>
+              ) : null
+            }
+          </div>
+          <div className={styles.row}>
+            <p className="heading-6 m-0">Details</p>
+            <p>{details}</p>
+          </div>
+          <div className={styles.row}>
+            <p className="heading-6 m-0">Role</p>
+            <p>{role}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
