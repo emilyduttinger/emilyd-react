@@ -1,0 +1,42 @@
+:root {
+  /* Header */
+  --header-height: 88px;
+  
+  /* Containers */
+  --container-width: 1680px;
+  --container-padding: 6.4vw;
+
+  /* Stacked Component */
+  --stacked-component-sm: 2rem;
+  --stacked-component-md: 3rem;
+  --stacked-component-lg: 3rem;
+
+  /* Gaps */
+  --gap-vertical: 2rem;
+  --gap-horizontal: 1rem;
+
+  @media (min-width: 1050px) {
+    /* Containers */
+    --container-padding: 7.14vw;
+
+    /* Stacked Component */
+    --stacked-component-sm: 3rem;
+    --stacked-component-md: 4rem;
+    --stacked-component-lg: 5rem;
+
+    /* Gaps */
+    --gap-vertical: 2.5rem;
+    --gap-horizontal: 3.5rem;
+  }
+
+  @media (min-width: 1440px) {
+    /* Stacked Component */
+    --stacked-component-sm: 4rem;
+    --stacked-component-md: 6.5rem;
+    --stacked-component-lg: 7.5rem;
+
+    /* Gaps */
+    --gap-vertical: 3rem;
+    --gap-horizontal: 5rem;
+  }
+}

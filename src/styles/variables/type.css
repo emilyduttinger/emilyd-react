@@ -1,0 +1,9 @@
+:root {
+  --font-family-headings: "DM Sans", serif;
+  --font-weight-headings: 500;
+
+  --font-family-body: "Space Grotesk", serif;
+  --font-weight-body: 400;
+
+  --heading-margin: 1.5rem;
+}
