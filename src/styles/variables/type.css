@@ -1,8 +1,8 @@
 :root {
-  --font-family-headings: "DM Sans", serif;
+  --font-family-headings: var(--font-dm-sans);
   --font-weight-headings: 500;
 
-  --font-family-body: "Space Grotesk", serif;
+  --font-family-body: var(--font-space-grotesk);
   --font-weight-body: 400;
 
   --heading-margin: 1.5rem;
