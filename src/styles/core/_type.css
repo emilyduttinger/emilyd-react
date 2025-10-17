@@ -1,8 +1,11 @@
 h1, .heading-1, h2, .heading-2, h3, .heading-3, h4, .heading-4, h5, .heading-5, h6, .heading-6 {
   font-family: var(--font-family-headings);
-  margin-bottom: var(--heading-margin);
   margin-top: 0;
   font-weight: 500;
+
+  &:not(.m-0) {
+    margin-bottom: var(--heading-margin);
+  }
 }
 
 h1, .heading-1 {
@@ -105,8 +108,11 @@ a:not(.btn):not(.unstyled-link) {
 
 .unstyled-list {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+
+  &:not([class*="p-"]):not([class*="m-"]) {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @keyframes underline-hover {

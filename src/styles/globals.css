@@ -3,10 +3,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-space-grotesk);
+  --color-background: var(--background-primary);
+  --color-foreground: var(--text-primary);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --font-headings: var(--font-dm-sans);
+  --font-body: var(--font-space-grotesk);
 }
 
 body {
@@ -34,59 +36,4 @@ body {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   clip-path: inset(50%);
-}
-
-.index {
-  --animation-cubic: cubic-bezier(0.58, 0.3, 0.005, 1);
-
-  padding: var(--stacked-component-lg) 0;
-
-  @media (max-width: 768px) {
-    padding-top: 0;
-  }
-}
-
-.intro-text {
-  max-width: 80ch;
-  /* opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s var(--animation-cubic), transform 0.4s var(--animation-cubic);
-
-  &.fade-in {
-    opacity: 1;
-    transform: none;
-    filter: none;
-  } */
-}
-
-.toolkit {
-  margin-top: var(--stacked-component-lg);
-  /* opacity: 0;
-  transition: opacity 0.4s var(--animation-cubic);
-
-  @media (min-width: 1600px) {
-    transition-delay: 0.5s;
-  }
-
-  &.fade-in {
-    opacity: 1;
-  } */
-}
-
-.toolkit-list {
-  li {
-    display: inline-block;
-    margin: 0;
-    line-height: 1.7em;
-
-    &:not(:last-child):after {
-      content: '/';
-      display: inline-block;
-      margin: 0 1rem;
-    }
-
-    @media (min-width: 1024px) {
-      font-size: 2rem;
-    }
-  }
 }
