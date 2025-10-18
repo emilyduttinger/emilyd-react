@@ -17,7 +17,7 @@ export default function HomeIntro() {
           <ul className={`${styles.toolkitList} unstyled-list`}>
             {
               toolKitArray.map((item, index) => {
-                return <li className="heading-4" key={index}>{item}</li>;
+                return <li className="heading-4 m-0" key={index}>{item}</li>;
               })
             }
           </ul>

@@ -2,6 +2,7 @@ h1, .heading-1, h2, .heading-2, h3, .heading-3, h4, .heading-4, h5, .heading-5, 
   font-family: var(--font-family-headings);
   margin-top: 0;
   font-weight: 500;
+  line-height: 1.2em;
 
   &:not(.m-0) {
     margin-bottom: var(--heading-margin);
