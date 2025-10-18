@@ -1,4 +1,5 @@
 import CardMedia from "./CardMedia";
+import Button from "../Button/Button";
 import styles from "./WorkCard.module.css"
 
 export interface WorkCardProps {
@@ -17,11 +18,14 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
   return (
     <div className={styles.workCard}>
       <a
-        className="card-image-link unstyled-link relative text-primary"
+        className="group card-image-link unstyled-link relative text-primary"
         href={urlArray && urlArray.length > 0 ? urlArray[0] : url}
         target="_blank"
       >
-        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
+        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} className="transition-opacity group-hover:opacity-70" />
+        <div className={`${styles.hoverContent} hoverContent`}>
+          <Button renderDiv={true}>Visit Website</Button>
+        </div>
         <ul className="tags unstyled-list absolute bottom-[0] left-[0] flex flex-wrap gap-[0.25rem] p-[1rem] sm:gap-[0.5rem]">
           {
             tags.map((item, index) => {
