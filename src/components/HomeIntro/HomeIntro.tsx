@@ -1,6 +1,6 @@
 import Container from "@/components/Container/Container";
 import styles from './HomeIntro.module.css';
-import Button from "../Button/Button";
+import Button from "../Base/Button";
 
 export default function HomeIntro() {
   const toolKitArray = ['JavaScript', 'TypeScript', 'Vue.js', 'Nuxt.js', 'React', 'HTML5 + CSS3', 'Sass + Less', 'Liquid', 'PHP', 'GraphQL', 'REST API', 'Git', 'Shopify Plus', 'Storybook', 'Design Systems', 'Accessibility', 'WCAG', 'Animation', 'UX/UI Design', 'Figma', 'Adobe Creative Suite', 'Cursor', 'Copilot'];
