@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="py-[var(--stacked-component-lg)]">
       <HomeIntro />
-      <WorkGrid />
+      <WorkGrid id="work" />
     </div>
   );
 }

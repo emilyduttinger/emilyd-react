@@ -12,7 +12,6 @@
   justify-content: center;
   text-decoration: none;
   border-radius: 6.25rem;
-  margin: 0;
   transition: all 0.3s ease;
 
   .icon {
@@ -28,10 +27,10 @@
 
     .icon {
       transform: translateX(3px);
-    }
 
-    &.icon-arrow-down .icon {
-      transform: translateY(3px);
+      &.icon-arrow-down {
+        transform: translateY(3px);
+      }
     }
   }
 

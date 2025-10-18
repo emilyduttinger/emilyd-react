@@ -1,6 +1,8 @@
+'use client';
+
 import Link from 'next/link';
-import { ReactSVG } from 'react-svg'
-import styles from "./Button.module.css";
+import IconArrowRight from '../Icons/IconArrowRight'
+import IconArrowDown from '../Icons/IconArrowDown'
 
 export interface ButtonProps {
   theme?: string;
@@ -8,7 +10,8 @@ export interface ButtonProps {
   external?: boolean;
   renderDiv?: boolean;
   showIcon?: boolean;
-  iconPath?: string;
+  arrowDirection?: string;
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -18,24 +21,42 @@ export default function Button({
   external = false,
   renderDiv = false,
   showIcon = true,
-  iconPath = '/svg/arrow-right.svg',
+  arrowDirection = 'right',
+  className = '',
   children,
 }: ButtonProps) {
 
   // Button Classes
-  const buttonClasses = `${styles.btn} btn-${theme}`;
+  const buttonClasses = `btn btn-${theme} ${className}`;
   
   // Check if this is an anchor link (starts with #)
   const isAnchorLink = typeof linkPath === 'string' && linkPath.startsWith('#');
 
+  // Smooth scroll handler for anchor links
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isAnchorLink) {
+      e.preventDefault();
+      const scrollToElement = document.querySelector(linkPath);
+      if (scrollToElement !== null) {
+        window.scrollTo({
+          top: scrollToElement.getBoundingClientRect().top + window.scrollY,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   // Common content (label + icon)
   const content = (
     <>
-      <span className="label">
+      <span>
         {children}
       </span>
       {showIcon && (
-        <ReactSVG src={iconPath} />
+        <span className={`icon icon-arrow-${arrowDirection}`}>
+          {arrowDirection === 'down' ? <IconArrowDown /> 
+            : <IconArrowRight />}
+        </span>
       )}
     </>
   );
@@ -50,6 +71,7 @@ export default function Button({
           className={buttonClasses}
           target={external ? '_blank' : undefined}
           rel={external ? 'noopener noreferrer' : undefined}
+          onClick={isAnchorLink ? handleAnchorClick : undefined}
         >
           {content}
         </a>

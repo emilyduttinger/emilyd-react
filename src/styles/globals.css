@@ -22,6 +22,7 @@ body {
   text-rendering: optimizeLegibility;
   font-optical-sizing: auto;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 * {
