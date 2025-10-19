@@ -1,4 +1,5 @@
 import Image from "next/image";
+import VideoPlayer from "../Base/VideoPlayer";
 
 export interface CardMediaProps {
   videoUrl?: string;
@@ -11,8 +12,7 @@ export default function CardMedia({ videoUrl, imageSrc, imageAlt = "", className
   return (
     <div className={`rounded-sm overflow-hidden ${className}`}>
       {
-        videoUrl ? <video src={videoUrl} poster={imageSrc} preload="none" autoPlay muted loop playsInline></video>
-        : <Image src={imageSrc} alt={imageAlt} width={1600} height={900} />
+        videoUrl ? <VideoPlayer videoUrl={videoUrl} poster={imageSrc} /> : <Image src={imageSrc} alt={imageAlt} width={1600} height={900} />
       }
     </div>
   );
