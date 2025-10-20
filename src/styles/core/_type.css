@@ -88,6 +88,14 @@ p {
   }
 }
 
+.large {
+  font-size: 1.125rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+} 
+
 a:not(.btn):not(.unstyled-link) {
   font-size: 1rem;
   line-height: 1.7em;

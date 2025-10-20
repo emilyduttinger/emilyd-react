@@ -4,6 +4,7 @@
   
   /* Containers */
   --container-width: 1680px;
+  --container-width-sm: 720px;
   --container-padding: 6.4vw;
 
   /* Stacked Component */
