@@ -17,14 +17,10 @@ export interface WorkCardProps {
 export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
-      <a
-        className="group card-image-link unstyled-link relative text-primary"
-        href={urlArray && urlArray.length > 0 ? urlArray[0] : url}
-        target="_blank"
-      >
-        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} className="transition-opacity group-hover:opacity-70" />
+      <div className="relative text-primary">
+        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} className="relative transition hover:[&_video]opacity-70 hover:[&_img]opacity-70 hover:[&_video]:blur-[2px] hover:[&_video]:blur-[2px]" />
         <div className={`${styles.hoverContent} hoverContent`}>
-          <Button renderDiv={true}>Visit Website</Button>
+          <Button linkPath={urlArray && urlArray.length > 0 ? urlArray[0] : url} external={true}>Visit Website</Button>
         </div>
         <ul className="tags unstyled-list absolute bottom-[0] left-[0] flex flex-wrap gap-[0.25rem] p-[1rem] sm:gap-[0.5rem]">
           {
@@ -33,7 +29,7 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
             })
           }
         </ul>
-      </a>
+      </div>
       <div className="card-content">
         <h3 className="m-0">{title}</h3>
         <div className="card-table border-t border-[var(--border-primary)] mt-[1.5rem]">
