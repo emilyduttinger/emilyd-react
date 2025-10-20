@@ -12,9 +12,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const data = workItems.find((item) => item.id === params.slug);
-  
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = workItems.find((item) => item.id === slug);
+
   if (!data) {
     return {
       title: "Case Study Not Found",
@@ -26,14 +27,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function CaseStudy({ params }: { params: { slug: string } }) {
-  const data = workItems.find((item) => item.id === params.slug);
+export default async function CaseStudy({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = workItems.find((item) => item.id === slug);
 
   if (!data) {
     notFound();
   }
 
-  const currentIndex = workItems.findIndex((item) => item.id === params.slug);
+  const currentIndex = workItems.findIndex((item) => item.id === slug);
   const prevItem = currentIndex > 0 ? workItems[currentIndex - 1] : null;
   const nextItem = currentIndex < workItems.length - 1 ? workItems[currentIndex + 1] : null;
 
@@ -49,7 +51,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         />
       </Container>
       <Container fullWidth>
-        <p className="heading-2 w-[50ch] !mt-[var(--stacked-component-sm)]">{data.details}</p>
+        <p className="heading-2 w-[50ch] max-w-[90%] !mt-[var(--stacked-component-sm)]">{data.details}</p>
         {
           data.urlArray && data.urlArray.length > 0 ? (
             <ul className="unstyled-list">
@@ -74,7 +76,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
           {prevItem ? (
             <Link
               href={`/work/${prevItem.id}`}
-              className="w-[50%] hover:text-[var(--text-secondary)] hover:bg-[var(--background-secondary)] transition px-[var(--container-padding)] py-[var(--stacked-component-sm)] border-r border-[var(--border-primary)]"
+              className={`${nextItem ? 'w-[50%]' : 'w-full'} ${nextItem ? 'border-r border-[var(--border-primary)]' : ''} relative px-[var(--container-padding)] py-[var(--stacked-component-sm)] sm:before:content-[''] before:absolute before:z-[-1] before:top-0 before:right-0 before:w-0 before:h-full before:bg-[var(--background-secondary)] before:transition-[width] before:ease-out sm:hover:before:w-full sm:hover:text-[var(--text-secondary)]`}
             >
               <span className="heading-6 !mb-[0.5rem] block">Previous Project</span>
               <span className="heading-3 mb-0 block flex items-center gap-2">
@@ -89,7 +91,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
           {nextItem ? (
             <Link
               href={`/work/${nextItem.id}`}
-              className="w-[50%] hover:text-[var(--text-secondary)] hover:bg-[var(--background-secondary)] transition px-[var(--container-padding)] py-[var(--stacked-component-sm)] text-right border-l border-[var(--border-primary)] ml-[-1px]"
+              className={`${prevItem ? 'w-[50%]' : 'w-full'} ${prevItem ? 'border-l border-[var(--border-primary)] ml-[-1px]' : ''} relative px-[var(--container-padding)] py-[var(--stacked-component-sm)] text-right sm:before:content-[''] before:absolute before:z-[-1] before:top-0 before:left-0 before:w-0 before:h-full before:bg-[var(--background-secondary)] before:transition-[width] before:ease-out sm:hover:before:w-full sm:hover:text-[var(--text-secondary)]`}
             >
               <span className="heading-6 !mb-[0.5rem] block">Next Project</span>
               <span className="heading-3 mb-0 block flex items-center gap-2 justify-end">
