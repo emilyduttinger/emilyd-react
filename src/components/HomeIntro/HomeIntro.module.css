@@ -1,6 +1,4 @@
 .homeIntro {
-  --animation-cubic: cubic-bezier(0.58, 0.3, 0.005, 1);
-
   padding-top: var(--stacked-component-lg);
 
   @media (max-width: 768px) {
@@ -19,32 +17,12 @@
   max-width: 80ch;
   position: relative;
   z-index: 2;
-  /* opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s var(--animation-cubic), transform 0.4s var(--animation-cubic);
-
-  &.fade-in {
-    opacity: 1;
-    transform: none;
-    filter: none;
-  } */
 }
 
 .toolkit {
   margin-top: var(--stacked-component-lg);
   position: relative;
   z-index: 2;
-
-  /* opacity: 0;
-  transition: opacity 0.4s var(--animation-cubic);
-
-  @media (min-width: 1600px) {
-    transition-delay: 0.5s;
-  }
-
-  &.fade-in {
-    opacity: 1;
-  } */
 }
 
 .toolkitList {;
@@ -90,6 +68,6 @@
     top: 0;
     left: 0;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: var(--video-opacity);
   }
 }

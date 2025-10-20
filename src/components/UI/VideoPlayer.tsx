@@ -30,7 +30,7 @@ export default function VideoPlayer({ videoUrl, autoplay = true, muted = true, l
 
   return (
     <div className={`video-player relative aspect-video ${className}`}>
-      <button onClick={isPlaying ? pauseVideo : playVideo} className="flex items-center justify-center absolute bottom-[1rem] right-[1rem] bg-[rgba(0,0,0,0.3)] backdrop-blur-md text-primary border border-[var(--border-primary)] w-[1.75rem] h-[1.75rem] z-100 rounded-full cursor-pointer hover:border-[var(--text-primary)] transition">
+      <button onClick={isPlaying ? pauseVideo : playVideo} className="flex items-center justify-center absolute bottom-[1rem] right-[1rem] bg-[var(--background-transparency)] backdrop-blur-md text-[var(--text-primary)] border border-[var(--border-primary)] w-[1.75rem] h-[1.75rem] z-100 rounded-full cursor-pointer hover:border-[var(--text-primary)] transition">
         {isPlaying ? <IconPause className="w-[0.75rem] h-[0.75rem]" /> : <IconPlay className="w-[0.75rem] h-[0.75rem]" />}
         <span className="visually-hidden">{ isPlaying ? 'Pause Video' : 'Play Video' }</span>
       </button>

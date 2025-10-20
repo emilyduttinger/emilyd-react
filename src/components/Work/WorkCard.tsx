@@ -18,7 +18,7 @@ export interface WorkCardProps {
 export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags, id }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
-      <div className={styles.cardMediaWrapper}>
+      <div className={`${styles.cardMediaWrapper} rounded-sm overflow-hidden`}>
         <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
         <div className={`${styles.hoverContent} hoverContent`}>
           <Button linkPath={`/work/${id}`}>View Case Study</Button>
@@ -26,7 +26,7 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
         <ul className="tags unstyled-list absolute bottom-[0] left-[0] flex flex-wrap gap-[0.25rem] p-[1rem] sm:gap-[0.5rem]">
           {
             tags.map((item, index) => {
-              return <li key={index} className="font-headings px-[0.5rem] py-[0.25rem] m-0 bg-[rgba(0,0,0,0.3)] backdrop-blur-md text-primary flex items-center rounded-[2rem] text-[0.75rem] sm:px-[0.75rem] sm:py-[0.5rem] sm:text-[0.875rem]">{item}</li>
+              return <li key={index} className="font-headings px-[0.5rem] py-[0.25rem] m-0 bg-[var(--background-transparency)] backdrop-blur-md text-primary flex items-center rounded-[2rem] text-[0.75rem] sm:px-[0.75rem] sm:text-[0.875rem] text-[var(--text-primary)]">{item}</li>
             })
           }
         </ul>

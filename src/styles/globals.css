@@ -7,6 +7,11 @@
   --font-body: var(--font-space-grotesk);
   --default-transition-timing-function: ease;
   --default-transition-duration: 0.3s;
+  --video-opacity: 0.1;
+}
+
+.dark {
+  --video-opacity: 0.4;
 }
 
 body {
