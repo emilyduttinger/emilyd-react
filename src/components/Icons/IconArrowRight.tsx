@@ -1,5 +1,9 @@
-export default function IconArrowDown() {
+export interface IconArrowRightProps {
+  className?: string;
+}
+
+export default function IconArrowDown({ className = "" }: IconArrowRightProps) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.17,13H3v-2h14.17l-6.59-6.59,1.41-1.41,8.29,8.29.71.71-.71.71-8.29,8.29-1.41-1.41,6.59-6.59Z" fill="currentColor" fillRule="evenodd"/></svg>
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.17,13H3v-2h14.17l-6.59-6.59,1.41-1.41,8.29,8.29.71.71-.71.71-8.29,8.29-1.41-1.41,6.59-6.59Z" fill="currentColor" fillRule="evenodd"/></svg>
   )
 }

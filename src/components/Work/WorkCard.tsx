@@ -47,14 +47,14 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
                     urlArray.map((url, index) => {
                       return (
                         <li key={index}>
-                          <a href={url} target="_blank">{url.replace('https://',"")}</a>
+                          <a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a>
                         </li>
                       )
                     })
                   }
                 </ul>
               ) : url ? (
-                <p><a href={url} target="_blank">{url.replace('https://',"")}</a></p>
+                <p><a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a></p>
               ) : null
             }
           </div>

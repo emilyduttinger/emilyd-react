@@ -11,6 +11,7 @@
   --stacked-component-sm: 2rem;
   --stacked-component-md: 3rem;
   --stacked-component-lg: 3rem;
+  --stacked-component-xl: 3rem;
 
   /* Gaps */
   --gap-vertical: 2rem;
@@ -24,6 +25,7 @@
     --stacked-component-sm: 3rem;
     --stacked-component-md: 4rem;
     --stacked-component-lg: 5rem;
+    --stacked-component-xl: 7rem;
 
     /* Gaps */
     --gap-vertical: 2.5rem;
@@ -35,6 +37,7 @@
     --stacked-component-sm: 4rem;
     --stacked-component-md: 6.5rem;
     --stacked-component-lg: 7.5rem;
+    --stacked-component-xl: 9rem;
 
     /* Gaps */
     --gap-vertical: 3rem;

@@ -96,7 +96,7 @@ p {
   }
 } 
 
-a:not(.btn):not(.unstyled-link) {
+a.inline-link {
   font-size: 1rem;
   line-height: 1.7em;
   color: var(--text-primary);
