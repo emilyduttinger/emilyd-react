@@ -51,7 +51,14 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         />
       </Container>
       <Container fullWidth>
-        <p className="heading-2 w-[50ch] max-w-[90%] !mt-[var(--stacked-component-sm)]">{data.details}</p>
+        <ul className="mt-[var(--stacked-component-sm)] unstyled-list flex flex-wrap gap-[0.5rem]">
+          {
+            data.tags.map((item, index) => {
+              return <li key={index} className="font-headings px-[0.5rem] py-[0.25rem] m-0 bg-[var(--background-secondary)] flex items-center rounded-[2rem] text-[0.75rem] sm:px-[0.75rem] sm:text-[0.875rem] text-[var(--text-secondary)]">{item}</li>
+            })
+          }
+        </ul>
+        <p className="heading-2 w-[50ch] max-w-[90%] !mt-[var(--heading-margin)]">{data.details}</p>
         {
           data.urlArray && data.urlArray.length > 0 ? (
             <ul className="unstyled-list">
