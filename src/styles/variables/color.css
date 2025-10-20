@@ -1,8 +1,15 @@
 :root {
+  --background-primary: #ffffff;
+  --background-secondary: #151515;
+  --text-primary: #151515;
+  --text-secondary: #ffffff;
+  --border-primary: #767676;
+}
+
+.dark {
   --background-primary: #151515;
   --background-secondary: #ffffff;
   --text-primary: #ffffff;
   --text-secondary: #151515;
   --border-primary: #767676;
-  --border-secondary: #cdcdcd;
 }

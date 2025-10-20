@@ -2,11 +2,7 @@
 @import "./core/core.css";
 @import "tailwindcss";
 
-@theme {
-  --color-background: var(--background-primary);
-  --color-foreground: var(--text-primary);
-  --color-primary: var(--text-primary);
-  --color-secondary: var(--text-secondary);
+:root {
   --font-headings: var(--font-dm-sans);
   --font-body: var(--font-space-grotesk);
   --default-transition-timing-function: ease;

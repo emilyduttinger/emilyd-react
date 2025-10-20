@@ -24,7 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${dmSans.variable} ${spaceGrotesk.variable} antialiased transition-colors`}
       >
         <ThemeProvider>
           <Header />
