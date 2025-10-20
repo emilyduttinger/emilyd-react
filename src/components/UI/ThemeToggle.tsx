@@ -1,10 +1,15 @@
+"use client"
+
+import { useTheme } from '@/app/contexts/ThemeContext'
 import styles from './ThemeToggle.module.css'
 
 export default function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className={styles.themeToggle}>
+    <button className={`${styles.themeToggle} ${ theme === 'dark' ? styles.darkActive : styles.lightActive }`} onClick={toggleTheme}>
       <span className={styles.toggle} />
-      <span className="visually-hidden">Enable Light Mode</span>
-    </div>
+      <span className="visually-hidden">{ theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme' }</span>
+    </button>
   )
 } 
