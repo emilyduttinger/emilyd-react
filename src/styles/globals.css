@@ -2,13 +2,15 @@
 @import "./core/core.css";
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --color-background: var(--background-primary);
   --color-foreground: var(--text-primary);
   --color-primary: var(--text-primary);
   --color-secondary: var(--text-secondary);
   --font-headings: var(--font-dm-sans);
   --font-body: var(--font-space-grotesk);
+  --default-transition-timing-function: ease;
+  --default-transition-duration: 0.3s;
 }
 
 body {

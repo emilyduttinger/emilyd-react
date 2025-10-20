@@ -45,13 +45,26 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity 0.3s cubic-bezier(.455,.03,.515,.955);
+    transition: opacity 0.3s ease;
   }
 
-  @media (min-width: 768px) {
-    &:hover, &:focus-visible {
-      .hoverContent {
-        opacity: 1;
+  .cardMediaWrapper {
+    position: relative;
+
+    img, video {
+      transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+
+    @media (min-width: 768px){
+      &:hover, &:focus-visible {
+        img, video {
+          opacity: 0.7;
+          filter: blur(2px);
+        }
+        
+        .hoverContent {
+          opacity: 1;
+        }
       }
     }
   }

@@ -17,8 +17,8 @@ export interface WorkCardProps {
 export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
-      <div className="relative text-primary">
-        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} className="relative transition hover:[&_video]opacity-70 hover:[&_img]opacity-70 hover:[&_video]:blur-[2px] hover:[&_video]:blur-[2px]" />
+      <div className={styles.cardMediaWrapper}>
+        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
         <div className={`${styles.hoverContent} hoverContent`}>
           <Button linkPath={urlArray && urlArray.length > 0 ? urlArray[0] : url} external={true}>Visit Website</Button>
         </div>
