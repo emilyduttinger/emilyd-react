@@ -14,9 +14,9 @@ export interface CardMediaProps {
 export default function CardMedia({ videoUrl, imageSrc, imageAlt = "", className = "", isVisible }: CardMediaProps) {
   return (
     <LazyMotion features={domAnimation}>
-      <m.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ amount: 0.5 }} className={`rounded-sm overflow-hidden ${className}`}>
+      <m.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ amount: 0.5 }} transition={{ duration: 0.4, ease: "easeInOut" }} className={`rounded-sm overflow-hidden ${className}`}>
         {
-          videoUrl ? <VideoPlayer videoUrl={videoUrl} poster={imageSrc} /> : <Image src={imageSrc} alt={imageAlt} width={1600} height={900} />
+          videoUrl ? <VideoPlayer videoUrl={videoUrl} poster={imageSrc} /> : <Image className="w-full" src={imageSrc} alt={imageAlt} width={1600} height={900} />
         }
       </m.div>
     </LazyMotion>

@@ -12,15 +12,16 @@ export interface WorkCardProps {
   details: string;
   role: string;
   tags: string[];
+  id: string;
 }
 
-export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags }: WorkCardProps) {
+export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags, id }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
       <div className={styles.cardMediaWrapper}>
         <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
         <div className={`${styles.hoverContent} hoverContent`}>
-          <Button linkPath={urlArray && urlArray.length > 0 ? urlArray[0] : url} external={true}>Visit Website</Button>
+          <Button linkPath={`/work/${id}`}>View Case Study</Button>
         </div>
         <ul className="tags unstyled-list absolute bottom-[0] left-[0] flex flex-wrap gap-[0.25rem] p-[1rem] sm:gap-[0.5rem]">
           {

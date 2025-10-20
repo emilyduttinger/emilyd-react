@@ -34,7 +34,7 @@ export default function VideoPlayer({ videoUrl, autoplay = true, muted = true, l
         {isPlaying ? <IconPause className="w-[0.75rem] h-[0.75rem]" /> : <IconPlay className="w-[0.75rem] h-[0.75rem]" />}
         <span className="visually-hidden">{ isPlaying ? 'Pause Video' : 'Play Video' }</span>
       </button>
-      <video ref={videoRef} src={videoUrl} poster={poster} preload="none" autoPlay={autoplay} muted={muted} loop={loop} playsInline={playsInline}></video>
+      <video ref={videoRef} src={videoUrl} poster={poster} preload="none" autoPlay={autoplay} muted={muted} loop={loop} playsInline={playsInline} className="w-full"></video>
     </div>
   )
 }
