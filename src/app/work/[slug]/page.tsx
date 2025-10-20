@@ -80,7 +80,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             >
               <span className="heading-6 !mb-[0.5rem] block">Previous Project</span>
               <span className="heading-3 mb-0 block flex items-center gap-2">
-                <IconArrowRight className="w-[2rem] h-[2rem] rotate-180" />
+                <IconArrowRight className="sm:w-[2rem] sm:h-[2rem] w-[1.5rem] h-[1.5rem] rotate-180" />
                 {prevItem.title}
               </span>
             </Link>
@@ -96,7 +96,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               <span className="heading-6 !mb-[0.5rem] block">Next Project</span>
               <span className="heading-3 mb-0 block flex items-center gap-2 justify-end">
                 {nextItem.title}
-                <IconArrowRight className="w-[2rem] h-[2rem]" />
+                <IconArrowRight className="sm:w-[2rem] sm:h-[2rem] w-[1.5rem] h-[1.5rem]" />
               </span>
             </Link>
           ) : (

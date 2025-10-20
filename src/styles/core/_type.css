@@ -26,7 +26,7 @@ h2, .heading-2 {
 }
 
 h3, .heading-3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   @media (min-width: 1024px) {
     font-size: 2rem;
