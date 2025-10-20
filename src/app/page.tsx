@@ -3,7 +3,7 @@ import WorkGrid from "@/components/Work/WorkGrid";
 
 export default function Home() {
   return (
-    <div className="py-[var(--stacked-component-lg)]">
+    <div>
       <HomeIntro />
       <WorkGrid id="work" />
     </div>

@@ -1,4 +1,4 @@
-import './Container.css';
+import styles from './Container.module.css';
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -6,8 +6,7 @@ interface ContainerProps {
 }
 
 export default function Container({ children, fullWidth = false }: ContainerProps) {
-  const className = fullWidth ? 'container w-full' : 'container mx-auto';
   return (
-    <div className={className}>{children}</div>
+    <div className={fullWidth ? `${styles.container} !max-w-full` : styles.container}>{children}</div>
   );
 }
