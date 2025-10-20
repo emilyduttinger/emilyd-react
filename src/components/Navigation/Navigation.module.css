@@ -1,0 +1,11 @@
+.navigation {
+  li {
+    display: inline-block;
+  
+    &:not(:last-child):after {
+      content: '/';
+      display: inline-block;
+      margin: 0 1rem;
+    }
+  }
+}
