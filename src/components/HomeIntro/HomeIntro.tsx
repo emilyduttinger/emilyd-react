@@ -2,8 +2,8 @@
 
 import Container from "@/components/Container/Container";
 import styles from './HomeIntro.module.css';
-import Button from "../Base/Button";
-import VideoPlayer from "../Base/VideoPlayer";
+import Button from "../UI/Button";
+import VideoPlayer from "../UI/VideoPlayer";
 import { motion } from "motion/react"
 
 export default function HomeIntro() {

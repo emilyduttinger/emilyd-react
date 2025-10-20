@@ -1,5 +1,5 @@
 import Image from "next/image";
-import VideoPlayer from "../Base/VideoPlayer";
+import VideoPlayer from "../UI/VideoPlayer";
 import { LazyMotion, domAnimation } from "motion/react"
 import * as m from "motion/react-m"
 

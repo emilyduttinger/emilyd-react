@@ -1,4 +1,4 @@
-import PageHeading from "@/components/Base/PageHeading";
+import PageHeading from "@/components/UI/PageHeading";
 import WorkGrid from "@/components/Work/WorkGrid";
 
 export default function Work() {

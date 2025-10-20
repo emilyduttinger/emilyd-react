@@ -1,5 +1,5 @@
 import CardMedia from "./CardMedia";
-import Button from "../Base/Button";
+import Button from "../UI/Button";
 import styles from "./WorkCard.module.css"
 
 export interface WorkCardProps {

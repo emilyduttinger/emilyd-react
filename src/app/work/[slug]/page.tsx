@@ -1,5 +1,5 @@
 import { workItems } from "@/data/workItems";
-import PageHeading from "@/components/Base/PageHeading";
+import PageHeading from "@/components/UI/PageHeading";
 import Container from "@/components/Container/Container";
 import CardMedia from "@/components/Work/CardMedia";
 import { notFound } from "next/navigation";
