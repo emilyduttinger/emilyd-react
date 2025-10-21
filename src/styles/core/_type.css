@@ -1,10 +1,13 @@
 h1, .heading-1, h2, .heading-2, h3, .heading-3, h4, .heading-4, h5, .heading-5, h6, .heading-6 {
   font-family: var(--font-family-headings);
   margin-top: 0;
-  font-weight: 500;
   line-height: 1.2em;
 
-  &:not(.m-0):not(.mb-0) {
+  &:not([class*="font-"]){
+    font-weight: 500;
+  }
+
+  &:not([class*="m-"]):not([class*="mb-"]) {
     margin-bottom: var(--heading-margin);
   }
 }
@@ -53,6 +56,10 @@ h5, .heading-5 {
 h6, .heading-6 {
   font-size: 1rem;
 
+  &:not([class*="font-"]){
+    @apply font-semibold;
+  }
+
   @media (min-width: 1024px) {
     font-size: 1.125rem;
   }
@@ -98,6 +105,7 @@ p {
 
 a.inline-link {
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.7em;
   color: var(--text-primary);
   text-decoration: none;

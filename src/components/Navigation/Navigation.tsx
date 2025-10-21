@@ -8,7 +8,7 @@ export default function Navigation() {
         <li><Link className="inline-link" href="/work">work</Link></li>
         <li><a className="inline-link" href="/pdf/EmilyDuttingerResume.pdf" target="_blank">resume</a></li>
         <li><a className="inline-link" href="https://www.linkedin.com/in/emilyduttinger/" target="_blank">linkedin</a></li>
-        <li><a className="inline-link" href="mailto:emilyduttinger@gmail.com">email me</a></li>
+        <li><a className="inline-link" href="mailto:emilyduttinger@gmail.com">email</a></li>
       </ul>
     </nav>
   )
