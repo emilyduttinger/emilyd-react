@@ -45,7 +45,7 @@ export default function HomeIntro() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.8 }}
     >
-      <VideoPlayer className={styles.introVideo} videoUrl="video/rainbow-bg-hero.mp4" />
+      <VideoPlayer className={styles.introVideo} videoUrl="/video/rainbow-bg-hero.mp4" />
     </motion.div>
   </div>
   );
