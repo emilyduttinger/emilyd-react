@@ -1,6 +1,6 @@
 :root {
   /* Header */
-  --header-height: 88px;
+  --header-height: 130px;
   
   /* Containers */
   --container-width: 1680px;
@@ -18,6 +18,9 @@
   --gap-horizontal: 1rem;
 
   @media (min-width: 1050px) {
+    /* Header */
+  --header-height: 86px;
+
     /* Containers */
     --container-padding: 7.14vw;
 
