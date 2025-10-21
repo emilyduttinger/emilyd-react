@@ -32,7 +32,10 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
         </ul>
       </div>
       <div className="card-content">
-        <h3 className="m-0">{title}</h3>
+        <h3 className="m-0 flex items-center gap-[0.5rem] justify-between">
+          {title}
+          <Button linkPath={`/work/${id}`} className="btn-text lg:hidden">Case Study</Button>
+        </h3>
         <div className="card-table border-t border-[var(--border-primary)] mt-[1.5rem]">
           <div className={styles.row}>
             <p className="heading-6 m-0">
@@ -54,17 +57,17 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
                   }
                 </ul>
               ) : url ? (
-                <p><a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a></p>
+                <p className="m-0"><a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a></p>
               ) : null
             }
           </div>
           <div className={styles.row}>
             <p className="heading-6 m-0">Details</p>
-            <p>{details}</p>
+            <p className="m-0">{details}</p>
           </div>
           <div className={styles.row}>
             <p className="heading-6 m-0">Role</p>
-            <p>{role}</p>
+            <p className="m-0">{role}</p>
           </div>
         </div>
       </div>

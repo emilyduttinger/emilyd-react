@@ -50,7 +50,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           imageAlt={data.imageAlt}
         />
       </Container>
-      <Container fullWidth>
+      <Container>
         <ul className="mt-[var(--stacked-component-sm)] unstyled-list flex flex-wrap gap-[0.5rem]">
           {
             data.tags.map((item, index) => {
