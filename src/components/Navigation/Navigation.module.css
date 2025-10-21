@@ -1,11 +1,31 @@
 .navigation {
   li {
     display: inline-block;
+    position: relative;
   
     &:not(:last-child):after {
       content: '/';
       display: inline-block;
-      margin: 0 1rem;
+      padding: 0 1rem;
+    }
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: var(--text-primary);
+      position: absolute;
+      bottom: -15px;
+      left: calc(50% - 3px - 38px / 2);
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .active {
+    &::before {
+      transform: scale(1);
     }
   }
 }
