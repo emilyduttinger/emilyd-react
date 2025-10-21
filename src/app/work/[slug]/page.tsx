@@ -44,7 +44,6 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       <PageHeading heading={data.title} url={data.urlArray && data.urlArray.length > 0 ? data.urlArray[0] : data.url} buttonLabel="Visit Website" buttonExternal={true} />
       <Container fullWidth>
         <CardMedia
-          className="mt-[var(--stacked-component-sm)]"
           videoUrl={data.videoUrl}
           imageSrc={data.imageSrc}
           imageAlt={data.imageAlt}

@@ -6,7 +6,7 @@ export default function WorkGrid({ id }: { id?: string }) {
   return (
     <div id={id ? id : undefined} className="work-grid">
       <Container fullWidth>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[3rem] md:gap-[3.5rem] pt-[var(--stacked-component-lg)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[3rem] md:gap-[3.5rem]">
           {
             workItems.map((item, index) => (
               <WorkCard key={index} {...item} />

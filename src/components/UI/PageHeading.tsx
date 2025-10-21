@@ -17,7 +17,7 @@ export default function PageHeading({heading, url, buttonLabel, buttonExternal =
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y:0 }}
       transition={{ delay: 0, duration: 0.5, ease: "easeInOut" }}
-      className="pt-[var(--stacked-component-xl)] pb-[var(--stacked-component-md)]"
+      className="pt-[var(--stacked-component-sm)] sm:pt-[var(--stacked-component-xl)] pb-[var(--stacked-component-md)]"
     >
       <Container className="sm:flex sm:justify-between sm:items-center text-center sm:text-left">
         <h1 className="mb-0 max-w-[22ch] heading-lg">{heading}</h1>
