@@ -8,10 +8,9 @@ export interface CardMediaProps {
   imageSrc: string;
   imageAlt?: string;
   className?: string;
-  isVisible?: boolean;
 }
 
-export default function CardMedia({ videoUrl, imageSrc, imageAlt = "", className = "", isVisible }: CardMediaProps) {
+export default function CardMedia({ videoUrl, imageSrc, imageAlt = "", className = "" }: CardMediaProps) {
   return (
     <LazyMotion features={domAnimation}>
       <m.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ amount: 0.5, once: true }} transition={{ duration: 0.4, ease: "easeInOut" }} className={`rounded-sm overflow-hidden ${className}`}>
