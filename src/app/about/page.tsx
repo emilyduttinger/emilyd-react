@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import PageHeading from "@/components/UI/PageHeading";
 import Container from "@/components/Container/Container";
 import Image from "next/image";
 import styles from '@/components/Navigation/Navigation.module.css'
+
+export const metadata: Metadata = {
+  title: "About | Emily Duttinger",
+  description: "Frontend UX/UI Engineer Based in Boynton Beach, FL",
+};
 
 export default function About() {
   return (

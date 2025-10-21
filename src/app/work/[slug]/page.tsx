@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: data.title,
+    title: `${data.title} | Emily Duttinger`,
+    descrtiption: data.details
   };
 }
 
