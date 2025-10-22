@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import IconPlay from '../Icons/IconPlay';
 import IconPause from '../Icons/IconPause';
 
@@ -17,6 +17,22 @@ export interface VideoPlayerProps {
 export default function VideoPlayer({ videoUrl, autoplay = true, muted = true, loop = true, playsInline = true, poster = "", className = "" }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    if (autoplay && videoRef.current) {
+      const playPromise = videoRef.current.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            setIsPlaying(false);
+          });
+      }
+    }
+  }, [autoplay, videoUrl]);
 
   const playVideo = () => {
     setIsPlaying(true);
