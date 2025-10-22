@@ -17,7 +17,7 @@
   --gap-vertical: 2rem;
   --gap-horizontal: 1rem;
 
-  @media (min-width: 1050px) {
+  @media (min-width: 1024px) {
     /* Header */
   --header-height: 86px;
 
