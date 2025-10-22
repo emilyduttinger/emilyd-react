@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <HomeIntro />
-      <WorkGrid id="work" />
+      <WorkGrid className="pt-[var(--stacked-component-lg)]" />
     </div>
   );
 }

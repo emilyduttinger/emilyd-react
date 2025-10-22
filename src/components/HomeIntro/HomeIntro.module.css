@@ -1,8 +1,9 @@
 .homeIntro {
-  padding: var(--stacked-component-lg) 0;
+  padding-top: var(--stacked-component-lg);
 
   @media (max-width: 767px) {
     padding-top: var(--stacked-component-sm);
+    padding-bottom: var(--stacked-component-lg);
   }
 }
 

@@ -2,9 +2,9 @@ import Container from "@/components/Container/Container";
 import WorkCard from "./WorkCard";
 import { workItems } from "@/data/workItems";
 
-export default function WorkGrid({ id }: { id?: string }) {
+export default function WorkGrid({ className }: { className?: string }) {
   return (
-    <div id={id ? id : undefined} className="work-grid">
+    <div className={`work-grid ${className}`}>
       <Container fullWidth>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[3rem] lg:gap-[3.5rem]">
           {
