@@ -18,7 +18,7 @@ export interface WorkCardProps {
 export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags, id }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
-      <div className={`${styles.cardMediaWrapper} rounded-sm overflow-hidden`} tabIndex="0">
+      <div className={`${styles.cardMediaWrapper} rounded-sm overflow-hidden`} tabIndex={0}>
         <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
         <div className={`${styles.hoverContent} hoverContent`}>
           <Button linkPath={`/work/${id}`}>View Case Study</Button>
@@ -50,14 +50,14 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
                     urlArray.map((url, index) => {
                       return (
                         <li key={index}>
-                          <a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a>
+                          <a className="inline-link" href={url} target="_blank" rel="noopener noreferrer">{url.replace('https://',"")}</a>
                         </li>
                       )
                     })
                   }
                 </ul>
               ) : url ? (
-                <p className="m-0"><a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a></p>
+                <p className="m-0"><a className="inline-link" href={url} target="_blank" rel="noopener noreferrer">{url.replace('https://',"")}</a></p>
               ) : null
             }
           </div>

@@ -66,17 +66,17 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             data.urlArray && data.urlArray.length > 0 ? (
               <ul className="unstyled-list">
                 {
-                  data.urlArray.map((url, index) => {
-                    return (
-                      <li key={index} className="mb-[0.5rem] last:mb-0">
-                        <a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a>
-                      </li>
-                    )
-                  })
+                data.urlArray.map((url, index) => {
+                  return (
+                    <li key={index} className="mb-[0.5rem] last:mb-0">
+                      <a className="inline-link" href={url} target="_blank" rel="noopener noreferrer">{url.replace('https://',"")}</a>
+                    </li>
+                  )
+                })
                 }
               </ul>
             ) : data.url ? (
-              <p className="mb-0"><a className="inline-link" href={data.url} target="_blank">{data.url.replace('https://',"")}</a></p>
+              <p className="mb-0"><a className="inline-link" href={data.url} target="_blank" rel="noopener noreferrer">{data.url.replace('https://',"")}</a></p>
             ) : null
           }
         </Fade>
