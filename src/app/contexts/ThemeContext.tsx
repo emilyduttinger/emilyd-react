@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 export interface themeProps {
   children: React.ReactNode;
+  initialTheme: string;
 }
 
 type Theme = 'light' | 'dark';
@@ -18,30 +19,21 @@ const ThemeContext = createContext<ThemeContextType>({
   toggleTheme: () => {},
 });
 
-export function ThemeProvider({children}: themeProps) {
-  const [theme, setTheme] = useState('dark');
+export function ThemeProvider({children, initialTheme}: themeProps) {
+  const [theme, setTheme] = useState<Theme>(initialTheme as Theme);
 
   useEffect(() => {
-    // Load theme from localStorage on initial render
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.toggle('dark', storedTheme === 'dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      // Respect system preference if no saved theme
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  useEffect(() => {
-    // Update localStorage and HTML class when theme changes
-    localStorage.setItem('theme', theme);
-    document.documentElement.classList.toggle('dark', theme === 'dark');
+    // Add theme class when theme changes
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = async () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    
+    // Set cookie with the new theme
+    document.cookie = `theme=${newTheme}; path=/; max-age=31536000; SameSite=Lax`;
   };
 
   return (

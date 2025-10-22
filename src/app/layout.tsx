@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { cookies } from "next/headers";
 import "../styles/globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
@@ -20,13 +21,18 @@ export const metadata: Metadata = {
   description: "I'm a Frontend UI/UX Engineer specializing in creating engaging and accessible web experiences. I'm a firm believer in the power of design systems to create scalable and consistent user interfaces."
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default async function RootLayout({children}: {children: React.ReactNode}) {
+  // Read theme from cookie server-side to prevent hydration mismatch
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get('theme');
+  const theme = themeCookie?.value || 'dark';
+
   return (
-    <html lang="en">
+    <html lang="en" className={theme}>
       <body
         className={`${dmSans.variable} ${spaceGrotesk.variable} antialiased transition-colors`}
       >
-        <ThemeProvider>
+        <ThemeProvider initialTheme={theme}>
           <Header />
           <main>
             {children}
