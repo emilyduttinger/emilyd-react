@@ -18,7 +18,7 @@ export interface WorkCardProps {
 export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags, id }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
-      <div className={`${styles.cardMediaWrapper} rounded-sm overflow-hidden`}>
+      <div className={`${styles.cardMediaWrapper} rounded-sm overflow-hidden`} tabIndex="0">
         <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
         <div className={`${styles.hoverContent} hoverContent`}>
           <Button linkPath={`/work/${id}`}>View Case Study</Button>
