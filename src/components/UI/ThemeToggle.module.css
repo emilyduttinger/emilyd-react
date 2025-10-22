@@ -10,7 +10,7 @@
   @media (max-width: 767px) {
     position: absolute;
     top: 1.5rem;
-    right: 1rem;
+    right: var(--container-padding);
   }
 
   .toggle {

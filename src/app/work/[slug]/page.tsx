@@ -89,10 +89,11 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               href={`/work/${prevItem.id}`}
               className={`${nextItem ? 'w-[50%]' : 'w-full'} ${nextItem ? 'border-r border-[var(--border-primary)]' : ''} relative px-[var(--container-padding)] py-[var(--stacked-component-sm)] sm:before:content-[''] before:absolute before:z-[-1] before:top-0 before:right-0 before:w-0 before:h-full before:bg-[var(--background-secondary)] before:transition-[width] before:ease-out sm:hover:before:w-full sm:hover:text-[var(--text-secondary)]`}
             >
-              <span className="heading-6 !mb-[0.5rem] block">Previous Project</span>
+              <span className="heading-6 !mb-[0.5rem] block max-sm:hidden">Previous Project</span>
               <span className="heading-3 mb-0 block flex items-center gap-2">
                 <IconArrowRight className="sm:w-[2rem] sm:h-[2rem] w-[1.5rem] h-[1.5rem] rotate-180" />
-                {prevItem.title}
+                <span className="max-sm:hidden">{prevItem.title}</span>
+                <span className="sm:hidden">Previous</span>
               </span>
             </Link>
           ) : (
@@ -104,9 +105,10 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               href={`/work/${nextItem.id}`}
               className={`${prevItem ? 'w-[50%]' : 'w-full'} ${prevItem ? 'border-l border-[var(--border-primary)] ml-[-1px]' : ''} relative px-[var(--container-padding)] py-[var(--stacked-component-sm)] text-right sm:before:content-[''] before:absolute before:z-[-1] before:top-0 before:left-0 before:w-0 before:h-full before:bg-[var(--background-secondary)] before:transition-[width] before:ease-out sm:hover:before:w-full sm:hover:text-[var(--text-secondary)]`}
             >
-              <span className="heading-6 !mb-[0.5rem] block">Next Project</span>
+              <span className="heading-6 !mb-[0.5rem] block max-sm:hidden">Next Project</span>
               <span className="heading-3 mb-0 block flex items-center gap-2 justify-end">
-                {nextItem.title}
+                <span className="max-sm:hidden">{nextItem.title}</span>
+                <span className="sm:hidden">Next</span>
                 <IconArrowRight className="sm:w-[2rem] sm:h-[2rem] w-[1.5rem] h-[1.5rem]" />
               </span>
             </Link>
