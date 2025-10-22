@@ -12,6 +12,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (min-width: 1024px) {
+    min-height: calc(100vh - var(--header-height) - var(--stacked-component-lg) * 2);
+  }
 }
 
 .introText {

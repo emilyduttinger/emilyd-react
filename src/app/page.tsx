@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <HomeIntro />
-      <WorkGrid className="pt-[var(--stacked-component-lg)]" />
+      <WorkGrid className="sm:pt-[var(--stacked-component-lg)]" />
     </div>
   );
 }
