@@ -17,7 +17,7 @@ export default function HomeIntro() {
           <Button linkPath="/work" className="mt-[var(--heading-margin)]">View My Work</Button>
         </Fade>
         <Fade transitionDelay={0.3} className={styles.toolkit}>
-          <h2 className="heading-6">My Toolkit</h2>
+          <h2 className="heading-6 mb-[1rem]">My Toolkit</h2>
           <ul className={`${styles.toolkitList} unstyled-list`}>
             {
               toolKitArray.map((item, index) => {

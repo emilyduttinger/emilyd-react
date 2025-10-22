@@ -8,7 +8,7 @@
 }
 
 .intro {
-  min-height: calc(100vh - var(--header-height) - var(--stacked-component-lg) * 2);
+  min-height: calc(100vh - var(--header-height) - var(--stacked-component-lg));
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col justify-center text-center gap-[1.5rem] px-[var(--container-padding)] pt-[var(--stacked-component-lg)] pb-[1.5rem] sm:text-left sm:flex-row sm:items-center sm:justify-between md:px-[2.5rem]">
       <Navigation />
-      <p className="m-0 text-[1rem]">&copy; Emily Duttinger {new Date().getFullYear()}</p>
+      <p className="m-0 small">&copy; Emily Duttinger {new Date().getFullYear()}</p>
     </footer>
   );
 }
