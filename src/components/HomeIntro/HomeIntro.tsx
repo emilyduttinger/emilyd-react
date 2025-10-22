@@ -13,7 +13,7 @@ export default function HomeIntro() {
       <div className={styles.intro}>
         <Fade fadeUp className={styles.introText}>
           <h1>I build user-focused applications with a passion for clean code and elegant design</h1>
-          <p className="large">I'm a <strong>Frontend UI/UX Engineer</strong> specializing in creating engaging and accessible web experiences. I'm a firm believer in the power of design systems to create scalable and consistent user interfaces.</p>
+          <p className="large">I&apos;m a <strong>Frontend UI/UX Engineer</strong> specializing in creating engaging and accessible web experiences. I&apos;m a firm believer in the power of design systems to create scalable and consistent user interfaces.</p>
           <Button linkPath="/work" className="mt-[var(--heading-margin)]">View My Work</Button>
         </Fade>
         <Fade transitionDelay={0.3} className={styles.toolkit}>
