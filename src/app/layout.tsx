@@ -4,7 +4,8 @@ import { cookies } from "next/headers";
 import "../styles/globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
-import { ThemeProvider } from "@/app/contexts/ThemeContext"
+import { ThemeProvider } from "@/app/contexts/ThemeContext";
+import AnimationProvider from "@/components/Animation/AnimationProvider";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -33,11 +34,13 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         className={`${dmSans.variable} ${spaceGrotesk.variable} antialiased transition-colors`}
       >
         <ThemeProvider initialTheme={theme}>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
+          <AnimationProvider>
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+          </AnimationProvider>
         </ThemeProvider>
       </body>
     </html>

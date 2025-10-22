@@ -1,8 +1,6 @@
-"use client"
-
 import Container from "../Container/Container";
 import Button from "./Button";
-import { motion } from "motion/react"
+import Fade from "../Animation/Fade";
 
 export interface PageHeadingProps {
   heading: string;
@@ -13,12 +11,7 @@ export interface PageHeadingProps {
 
 export default function PageHeading({heading, url, buttonLabel, buttonExternal = false}: PageHeadingProps) {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y:0 }}
-      transition={{ delay: 0, duration: 0.5, ease: "easeInOut" }}
-      className="pt-[var(--stacked-component-sm)] sm:pt-[var(--stacked-component-xl)] pb-[var(--stacked-component-md)]"
-    >
+    <Fade fadeUp className="pt-[var(--stacked-component-sm)] sm:pt-[var(--stacked-component-xl)] pb-[var(--stacked-component-md)]">
       <Container className="sm:flex sm:justify-between sm:items-center text-center sm:text-left">
         <h1 className="mb-0 max-w-[22ch] heading-lg">{heading}</h1>
         {
@@ -27,6 +20,6 @@ export default function PageHeading({heading, url, buttonLabel, buttonExternal =
           )
         }
       </Container>
-    </motion.div>
+    </Fade>
   );
 }

@@ -5,6 +5,7 @@ import CardMedia from "@/components/Work/CardMedia";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import IconArrowRight from "@/components/Icons/IconArrowRight";
+import Fade from "@/components/Animation/Fade";
 
 export async function generateStaticParams() {
   return workItems.map((item) => ({
@@ -48,34 +49,37 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           videoUrl={data.videoUrl}
           imageSrc={data.imageSrc}
           imageAlt={data.imageAlt}
+          animateOnScroll={false}
         />
       </Container>
       <Container>
-        <ul className="mt-[var(--stacked-component-sm)] unstyled-list flex flex-wrap gap-[0.5rem]">
+        <Fade scrolling>
+          <ul className="mt-[var(--stacked-component-sm)] unstyled-list flex flex-wrap gap-[0.5rem]">
+            {
+              data.tags.map((item, index) => {
+                return <li key={index} className="font-headings px-[0.5rem] py-[0.25rem] m-0 bg-[var(--background-secondary)] flex items-center rounded-[2rem] text-[0.75rem] sm:px-[0.75rem] sm:text-[0.875rem] text-[var(--text-secondary)]">{item}</li>
+              })
+            }
+          </ul>
+          <p className="heading-2 w-[50ch] max-w-[90%] !mt-[var(--heading-margin)]">{data.details}</p>
           {
-            data.tags.map((item, index) => {
-              return <li key={index} className="font-headings px-[0.5rem] py-[0.25rem] m-0 bg-[var(--background-secondary)] flex items-center rounded-[2rem] text-[0.75rem] sm:px-[0.75rem] sm:text-[0.875rem] text-[var(--text-secondary)]">{item}</li>
-            })
+            data.urlArray && data.urlArray.length > 0 ? (
+              <ul className="unstyled-list">
+                {
+                  data.urlArray.map((url, index) => {
+                    return (
+                      <li key={index} className="mb-[0.5rem] last:mb-0">
+                        <a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            ) : data.url ? (
+              <p className="mb-0"><a className="inline-link" href={data.url} target="_blank">{data.url.replace('https://',"")}</a></p>
+            ) : null
           }
-        </ul>
-        <p className="heading-2 w-[50ch] max-w-[90%] !mt-[var(--heading-margin)]">{data.details}</p>
-        {
-          data.urlArray && data.urlArray.length > 0 ? (
-            <ul className="unstyled-list">
-              {
-                data.urlArray.map((url, index) => {
-                  return (
-                    <li key={index} className="mb-[0.5rem] last:mb-0">
-                      <a className="inline-link" href={url} target="_blank">{url.replace('https://',"")}</a>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          ) : data.url ? (
-            <p className="mb-0"><a className="inline-link" href={data.url} target="_blank">{data.url.replace('https://',"")}</a></p>
-          ) : null
-        }
+        </Fade>
       </Container>
       
       <div className="mt-[var(--stacked-component-lg)] border-t border-b border-[var(--border-primary)] w-full">

@@ -1,17 +1,15 @@
-"use client"
-
 import Container from "@/components/Container/Container";
 import Image from "next/image";
 import styles from '@/components/Navigation/Navigation.module.css'
-import { motion } from "motion/react"
+import Fade from "../Animation/Fade";
 
 export default function AboutContent() {
   return (
     <Container className="flex flex-col items-center justify-center lg:flex-row gap-[var(--stacked-component-md)]">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="w-full lg:w-[50%] self-start">
+      <Fade className="w-full lg:w-[50%] self-start">
         <Image src="/images/me_espresso.jpg" alt="Emily Duttinger Headshot" className="rounded-sm" width={1600} height={2133} priority />
-      </motion.div>
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ amount: 0.5 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="w-full lg:w-[50%]">
+      </Fade>
+      <Fade fadeUp className="w-full lg:w-[50%]">
         <h2>Frontend UX/UI Engineer Based in Boynton Beach, FL</h2>
         <p>Hello! I&rsquo;m Emily Duttinger, a Frontend UX/UI Engineer with over 10 years of experience bringing digital ideas to life through thoughtful design and clean, scalable code. With a background in design, I approach every project as both an engineer and a designer&mdash;balancing creativity, usability, and technical precision.</p>
         <p>My background in design shapes the way I build. Every component, animation, and interaction should not only work but feel right. I care deeply about design systems, accessibility, and writing clean, maintainable code that makes the web more intuitive and inclusive.</p>
@@ -32,7 +30,7 @@ export default function AboutContent() {
             </li>
           </ul>
         </div>
-      </motion.div>
+      </Fade>
     </Container>
   )
 }
