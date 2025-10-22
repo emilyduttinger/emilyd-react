@@ -1,17 +1,5 @@
 :root {
-  --background-primary: #FFFAF1;
-  --background-secondary: #151515;
-  --background-transparency: rgba(255,255,255,0.3);
-  --text-primary: #151515;
-  --text-secondary: #FFFAF1;
-  --border-primary: #767676;
-}
-
-.dark {
-  --background-primary: #151515;
-  --background-secondary: #FFFAF1;
-  --background-transparency: rgba(0,0,0,0.3);
-  --text-primary: #FFFAF1;
-  --text-secondary: #151515;
-  --border-primary: #767676;
+  --color-light: #FFFAF1;
+  --color-dark: #151515;
+  --color-gray: #767676;
 }

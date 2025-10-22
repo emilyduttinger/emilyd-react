@@ -1,0 +1,17 @@
+:root {
+  --background-primary: var(--color-light);
+  --background-secondary: var(--color-dark);
+  --background-transparency: rgba(255,255,255,0.3);
+  --text-primary: var(--color-dark);
+  --text-secondary: var(--color-light);
+  --border-primary: var(--color-gray);
+}
+
+.dark {
+  --background-primary: var(--color-dark);
+  --background-secondary: var(--color-light);
+  --background-transparency: rgba(0,0,0,0.3);
+  --text-primary: var(--color-light);
+  --text-secondary: var(--color-dark);
+  --border-primary: var(--color-gray);
+}
