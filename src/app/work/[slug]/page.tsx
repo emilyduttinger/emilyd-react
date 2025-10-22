@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${data.title} | Emily Duttinger`,
-    descrtiption: data.details
+    description: data.details
   };
 }
 
@@ -92,7 +92,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               </span>
             </Link>
           ) : (
-            <div></div>
+            null
           )}
 
           {nextItem ? (
@@ -107,7 +107,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               </span>
             </Link>
           ) : (
-            <div></div>
+            null
           )}
         </div>
       </div>

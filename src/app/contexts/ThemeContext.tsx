@@ -6,8 +6,10 @@ export interface themeProps {
   children: React.ReactNode;
 }
 
+type Theme = 'light' | 'dark';
+
 interface ThemeContextType {
-  theme: string;
+  theme: Theme;
   toggleTheme: () => void;
 }
 

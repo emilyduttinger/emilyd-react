@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Emily Duttinger | Frontend UX/UI Engineer",
-  description: "I'm a Frontend UI/UX Engineer specializing in creating engaging and accessible web experiences. I'm a firm believer in the power of design systems to create scalable and consistent user interfaces.",
+  description: "I'm a Frontend UI/UX Engineer specializing in creating engaging and accessible web experiences. I'm a firm believer in the power of design systems to create scalable and consistent user interfaces."
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
