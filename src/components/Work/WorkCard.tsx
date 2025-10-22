@@ -33,7 +33,7 @@ export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url
       </div>
       <div className="card-content">
         <h2 className="heading-3 m-0">{title}</h2>
-        <Button linkPath={`/work/${id}`} className="btn-text mt-[1.125rem] lg:hidden">Case Study</Button>
+        <Button linkPath={`/work/${id}`} className="btn-text mt-[1.125rem] lg:hidden">View Case Study</Button>
         <div className="card-table border-t border-[var(--border-primary)] mt-[1.5rem]">
           <div className={styles.row}>
             <p className="heading-6 m-0">
