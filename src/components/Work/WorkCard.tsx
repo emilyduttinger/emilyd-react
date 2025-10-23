@@ -13,13 +13,14 @@ export interface WorkCardProps {
   role: string;
   tags: string[];
   id: string;
+  priority?: boolean;
 }
 
-export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags, id }: WorkCardProps) {
+export default function WorkCard({ title, videoUrl, imageSrc, imageAlt = "", url, urlArray, details, role, tags, id, priority = false }: WorkCardProps) {
   return (
     <div className={styles.workCard}>
       <div className={`${styles.cardMediaWrapper} rounded-sm overflow-hidden`} tabIndex={0}>
-        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} />
+        <CardMedia videoUrl={videoUrl} imageSrc={imageSrc} imageAlt={imageAlt} priority={priority} />
         <div className={`${styles.hoverContent} hoverContent`}>
           <Button linkPath={`/work/${id}`}>View Case Study</Button>
         </div>

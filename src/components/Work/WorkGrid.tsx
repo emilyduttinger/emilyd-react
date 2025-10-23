@@ -9,7 +9,7 @@ export default function WorkGrid({ className }: { className?: string }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[3rem] lg:gap-[3.5rem]">
           {
             workItems.map((item, index) => (
-              <WorkCard key={index} {...item} />
+              <WorkCard key={index} {...item} priority={index < 2} />
             ))
           }
         </div>

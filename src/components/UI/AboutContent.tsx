@@ -9,7 +9,15 @@ export default function AboutContent() {
   return (
     <Container className="flex flex-col items-center justify-center lg:flex-row gap-[var(--stacked-component-md)]">
       <Fade className="w-full lg:w-[50%] self-start">
-        <Image src="/images/me_espresso.jpg" alt="Emily Duttinger Headshot" className="rounded-sm" width={1600} height={2133} priority />
+        <Image 
+          src="/images/me_espresso.jpg" 
+          alt="Emily Duttinger Headshot" 
+          className="rounded-sm" 
+          width={800} 
+          height={1066} 
+          priority 
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
       </Fade>
       <Fade transitionDelay={0.3} className="w-full lg:w-[50%]">
         <h2>Frontend UX/UI Engineer Based in Boynton Beach, FL</h2>
